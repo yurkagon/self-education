@@ -1,0 +1,7 @@
+#place{
+	height: 100%;
+	width: 128px;
+	margin-right: auto;
+	margin-left: auto;
+	border: 4px double black;
+}

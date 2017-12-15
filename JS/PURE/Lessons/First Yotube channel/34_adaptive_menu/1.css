@@ -1,0 +1,32 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+#menu{
+	width: 250px;
+	height: 100vh;
+	background: black;
+	position: fixed;
+	color: white;
+	left: -240px;
+	top: 0;
+
+	transition: all ease 1s;
+
+	
+}
+#but{
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	background-color: red;
+
+	right: 0;
+	top: 50%;
+
+	border: white solid 5px;
+	border-radius: 4px;
+
+}

@@ -1,0 +1,22 @@
+.tabs{
+	height: 500px;
+	width: 500px;
+	background-color: yellow;
+	margin: auto;
+	display: block;
+}
+
+.tabs_header{
+	border: 1px solid black;
+}
+
+.tabs_contanior{
+	height: 95%;
+	padding: 10px;
+}
+
+.tubs-body{
+	font-size: 2em;
+	display: none;
+	transition: 0.3s ease;
+}

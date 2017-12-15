@@ -1,0 +1,3 @@
+#ignores all .map recursive from the current folder
+
+**.map

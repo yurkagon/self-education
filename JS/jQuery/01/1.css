@@ -1,0 +1,13 @@
+#slider, #content, #toggle {
+  margin: auto;
+  width: 400px;
+  background-color: red; }
+
+#content, #toggle {
+  background-color: yellow;
+  border: black 3px solid; }
+
+#toggle {
+  height: 3vh; }
+
+/*# sourceMappingURL=1.css.map */

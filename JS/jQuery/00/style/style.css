@@ -1,0 +1,24 @@
+#panel {
+  background: #754c24;
+  height: 200px;
+  display: none; }
+
+.slide {
+  margin: 0;
+  padding: 0;
+  border-top: solid 4px #422410;
+  background: url(http://anton.shevchuk.name/wp-demo/jquery-tutorials/images/btn-slide.gif) no-repeat center top; }
+
+.btn-slide {
+  background: url(images/white-arrow.gif) no-repeat right -50px;
+  text-align: center;
+  width: 144px;
+  height: 31px;
+  padding: 10px 10px 0 0;
+  margin: 0 auto;
+  display: block;
+  font: bold 120%/100% Arial, Helvetica, sans-serif;
+  color: #fff;
+  text-decoration: none; }
+
+/*# sourceMappingURL=style.css.map */

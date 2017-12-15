@@ -1,0 +1,57 @@
+//just learning
+
+@import "import";
+
+$col: blue;
+$size: 50px;
+
+
+
+//template selector
+%someAbstractClass{
+	color: green;
+}
+//like a function
+@mixin font($size){
+	font: Arial, Tahoma, sans-serif, cursive;
+	font-size: $size + px;
+}
+
+.line{
+	border: 8px solid black;
+}
+
+#block{
+	@extend .line; //extending
+	@extend %someAbstractClass;
+
+	background-color: $col;
+	width: $size/2;
+	height: (500px/2); //  / - only with scopes
+
+	p{
+		@include font(30);
+	}
+
+	//if has a parent
+	@if & {
+		&::hover{
+			background: blue;
+		}
+	}
+
+	div{
+		//(and, or, not)
+		@if $SomeBoolean1 == false and $SomeBoolean2 {
+        	position:relative;
+        } @else {
+        	position: fixed;
+        }
+    }
+
+    //@debug 10em + 12em; //in compilation  log
+    //@warn "Some warning text";
+    //@error "FATAL ERROR!"; //your own error
+
+
+}

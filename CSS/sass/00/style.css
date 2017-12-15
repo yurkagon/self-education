@@ -1,0 +1,19 @@
+#block {
+  color: green; }
+
+.line, #block {
+  border: 8px solid black; }
+
+#block {
+  background-color: blue;
+  width: 25px;
+  height: 250px; }
+  #block p {
+    font: Arial, Tahoma, sans-serif, cursive;
+    font-size: 30px; }
+  #block::hover {
+    background: blue; }
+  #block div {
+    position: fixed; }
+
+/*# sourceMappingURL=style.css.map */

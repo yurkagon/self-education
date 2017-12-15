@@ -1,0 +1,18 @@
+$size: 400px;
+
+#slider{
+	margin: auto;
+	width: $size;
+	background-color: red;
+}
+
+
+#content{
+	@extend #slider;
+	background-color: yellow;
+	border: black 3px solid;
+}
+#toggle{
+	@extend #content;
+	height: 3vh;
+}
