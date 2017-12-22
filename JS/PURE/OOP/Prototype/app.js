@@ -36,9 +36,15 @@ Programmer.prototype = Object.create(Human.prototype);
 Programmer.prototype.constructor = Programmer;
 //override
 Programmer.prototype.sayHi = function(argument){
+	//call parent method (example)
+	//Human.prototype.sayHi.apply(this, arguments);
 	alert('I am a Human and I am Programmer. Soo...Hi!');
 };
 
 var b = new Programmer("Yura",25,'Js');
 
 b.sayHi();
+
+alert( b instanceof Programmer ); // true
+alert( b instanceof Human ); //true
+alert( a instanceof Programmer ); //false
