@@ -1,0 +1,51 @@
+.container, .container-2 {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.container div, .container-2 div {
+  border: 1px silver solid;
+  padding: 5px;
+}
+
+.container .block-1, .container-2 .block-1 {
+  flex: 1;
+  order: 1;
+}
+
+.container .block-2, .container-2 .block-2 {
+  flex: 1;
+  order: 2;
+}
+
+.container .block-3, .container-2 .block-3 {
+  flex: 2;
+  order: 3;
+}
+
+.container-2 {
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+.container-2 .block {
+  border: 1px silver solid;
+  padding: 5px;
+  flex-basis: 20%;
+  font-size: 1.5em;
+}
+
+@media (max-width: 500px){
+  .container-2 {
+    background: red;
+    flex-wrap: wrap;
+  }
+  .block {
+    border: 1px silver solid;
+    padding: 5px;
+    flex-basis: 20%;
+    font-size: 5px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
