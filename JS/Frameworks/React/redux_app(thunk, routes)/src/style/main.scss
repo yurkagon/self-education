@@ -1,0 +1,11 @@
+@import 'bar';
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.justify-content-center {
+  display: flex !important;
+  justify-content: center !important;
+}
