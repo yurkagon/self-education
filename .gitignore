@@ -1,3 +1,5 @@
 #ignores all .map recursive from the current folder
 
 **.map
+
+**.DS_Store
