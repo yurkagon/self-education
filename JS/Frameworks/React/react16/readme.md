@@ -122,8 +122,7 @@ Now these methods are depreciated
 
 > componentWillUpdate
 
-
-
+### New lifecircles
 > getDerivedStateFromProps
 
 Generation a new state from recieved props
@@ -169,3 +168,27 @@ componentDidUpdate(prevProps, prevState, snapshot) {
 > componentDidCatch
 
 Catching errors
+
+## Pointer events
+
+(not supported in a bit part of browser)
+
+> onPointerDown
+
+> onPointerMove
+
+> onPointerUp
+
+> onPointerCancel
+
+> onGotPointerCapture
+
+> onLostPointerCapture
+
+> onPointerEnter
+
+> onPointerLeave
+
+> onPointerOver
+
+> onPointerOut
