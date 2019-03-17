@@ -1,0 +1,15 @@
+<label for="search">Search </label>
+<input (input)="onChange($event)" id="search">
+<h1>{{title}}</h1>
+
+<app-user
+  *ngFor="let user of users | filterBySearch: filter"
+  [user]="user"
+>
+</app-user>
+
+<h2
+  *ngIf="!(users | filterBySearch: filter).length"
+>
+  No users
+</h2>
