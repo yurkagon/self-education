@@ -1,0 +1,18 @@
+.global-loading-screen {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 99;
+
+  .admin {
+    background-color: #ebedef;
+  }
+  .landing {
+    background-color: black;
+  }
+  .restaurant {
+    background-color: white;
+  }
+}

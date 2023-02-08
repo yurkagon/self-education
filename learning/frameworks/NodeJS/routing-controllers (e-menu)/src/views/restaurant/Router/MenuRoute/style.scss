@@ -1,0 +1,12 @@
+.bottom-navigation {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  display: flex;
+  left: 16px;
+  flex-direction: row-reverse;
+
+  * {
+    cursor: pointer;
+  }
+}

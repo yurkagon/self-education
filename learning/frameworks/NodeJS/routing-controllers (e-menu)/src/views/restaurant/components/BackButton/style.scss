@@ -1,0 +1,18 @@
+.restaurant-view {
+  .back-button {
+    margin-top: 65px;
+    margin-left: 13px;
+    display: flex;
+
+    .text {
+      color: #858ea1;
+      font-size: 14px;
+      line-height: 16px;
+    }
+
+    .arrow {
+      position: relative;
+      bottom: 1px;
+    }
+  }
+}

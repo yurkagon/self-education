@@ -1,0 +1,38 @@
+.restaurant-view {
+  .initial-order-button {
+    background-color: #ffda80;
+    border-radius: 2px;
+    width: 96px;
+    height: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #000000;
+  }
+
+  .order-counter {
+    display: inline-flex;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+
+    .count {
+      width: 44px;
+      line-height: 26px;
+    }
+
+    .counter-button {
+      line-height: 23px;
+      font-size: 18px;
+      height: 26px;
+      width: 26px;
+      background: #ffda80;
+      cursor: pointer;
+    }
+  }
+}

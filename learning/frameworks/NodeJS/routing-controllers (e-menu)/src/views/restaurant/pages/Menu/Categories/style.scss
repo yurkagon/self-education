@@ -1,0 +1,43 @@
+.restaurant-view {
+  .menu-page {
+    .categories {
+      width: 100%;
+      padding: 24px 16px 70px 16px;
+
+      .category {
+        width: 100%;
+        background: #fafbfd;
+        cursor: pointer;
+        height: 70px;
+        border-radius: 8px;
+        display: flex;
+        margin-bottom: 16px;
+
+        .wrapper {
+          width: 100%;
+          display: flex;
+          line-height: 70px;
+
+          .name {
+            width: 100%;
+
+            .cat_logo {
+              margin-left: 24px;
+              vertical-align: middle;
+            }
+          }
+
+          .arrow {
+            margin-right: 24.4px;
+          }
+        }
+      }
+
+      .title {
+        font-size: 18px;
+        color: #1b1a1a;
+        margin-left: 16.4px;
+      }
+    }
+  }
+}

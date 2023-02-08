@@ -1,0 +1,50 @@
+.restaurant-view {
+  .dish-detail {
+    margin-bottom: 56px;
+    z-index: 500;
+    position: relative;
+    background-color: white;
+
+    .dish-description {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 30px 16px;
+
+      .buttons-panel {
+        position: fixed;
+        bottom: 16px;
+        right: 16px;
+        display: flex;
+        left: 16px;
+        flex-direction: row-reverse;
+
+        .button-align-left {
+          margin-right: 75px;
+        }
+      }
+    }
+    .dish-image {
+      width: 100%;
+      max-width: 414px;
+      height: 100%;
+      max-height: 414px;
+    }
+  }
+
+  @media screen and (orientation: landscape) {
+    .dish-detail {
+      display: flex;
+      margin-bottom: unset;
+
+      .dish-description {
+        justify-content: flex-start;
+      }
+
+      .dish-image {
+        max-height: 375px;
+        max-width: 375px;
+      }
+    }
+  }
+}

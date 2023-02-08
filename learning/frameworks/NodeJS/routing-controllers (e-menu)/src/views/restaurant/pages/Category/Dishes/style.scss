@@ -1,0 +1,114 @@
+.restaurant-view {
+  .category-page {
+    margin: 0 8px 0 8px;
+    .back-button {
+      margin-top: 65px;
+      margin-left: 13px;
+      display: flex;
+
+      .text {
+        color: #858ea1;
+        font-size: 14px;
+        line-height: 16px;
+      }
+
+      .arrow {
+        position: relative;
+        bottom: 1px;
+      }
+    }
+
+    .name {
+      margin-left: 15px;
+      margin-top: 16px;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 21px;
+      text-transform: uppercase;
+
+      .text {
+        font: inherit;
+      }
+    }
+
+    .dishes {
+      width: 100%;
+    }
+
+    .dish {
+      margin: 0 0 12px 0;
+      box-shadow: 0px 2px 6px rgba(133, 142, 161, 0.13);
+      border-radius: 8px;
+      padding: 20px 20px 15px 15px;
+
+      &:last-child {
+        margin-bottom: 88px;
+      }
+
+      .content {
+        display: flex;
+
+        .image-container {
+          width: 98px;
+          height: 98px;
+
+          .image {
+            width: 98px;
+            height: 98px;
+            border-radius: 8px;
+          }
+        }
+
+        .description-container {
+          width: 70%;
+          .text {
+            margin-left: 12px;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 21px;
+            color: #000000;
+          }
+
+          .description {
+            display: block;
+            margin-top: 12px;
+            margin-left: 12px;
+            margin-right: 44px;
+            font-size: 14px;
+            line-height: 16px;
+            color: #858ea1;
+          }
+        }
+      }
+
+      .order {
+        margin-top: 12px;
+        display: flex;
+        justify-content: space-between;
+
+        .price {
+          font-size: 18px;
+          line-height: 21px;
+          color: #000000;
+        }
+
+        .cart {
+          background-color: #ffda80;
+          border-radius: 2px;
+          width: 107px;
+          height: 26px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-right: 12px;
+          margin-bottom: 16px;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 16px;
+          text-transform: uppercase;
+          color: #000000;
+        }
+      }
+    }
+  }
+}

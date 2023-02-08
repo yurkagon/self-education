@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
+$redColor: #de646e;
+$greyColor: #858ea1;
+
+.restaurant-view {
+  .page-not-found {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    line-height: 0.8em;
+
+    .pizza {
+      position: relative;
+
+      .error {
+        font-family: "Righteous", cursive;
+        position: absolute;
+        color: $redColor;
+        font-size: 77px;
+        top: 131px;
+        left: 146px;
+      }
+      .main-error-text,
+      .secondary-error-text {
+        position: absolute;
+        font-size: 12px;
+        font-weight: 600;
+      }
+      .main-error-text {
+        max-width: 55%;
+        top: 214px;
+        left: 150px;
+      }
+      .secondary-error-text {
+        max-width: 40%;
+        top: 258px;
+        left: 150px;
+        color: $greyColor;
+      }
+    }
+    .down {
+      position: absolute !important;
+      bottom: 16px;
+      line-height: 1.5em;
+    }
+  }
+}

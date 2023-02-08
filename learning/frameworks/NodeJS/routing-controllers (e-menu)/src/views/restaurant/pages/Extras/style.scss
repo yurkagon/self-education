@@ -1,0 +1,116 @@
+$yellow: #ffda80;
+
+.restaurant-view {
+  .extras {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+
+    .extras-content {
+      .changes-in-dish {
+        font-size: 24px;
+        line-height: 28px;
+        text-align: center;
+        font-style: normal;
+        font-weight: normal;
+        margin-top: 75px;
+      }
+      .extra-components {
+        .additives-header {
+          border-bottom: 2px solid #858ea1;
+          margin-top: 45px;
+          .additives {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 21px;
+            text-transform: uppercase;
+            color: #000000;
+          }
+        }
+
+        .container {
+          display: block;
+          position: relative;
+          padding-left: 35px;
+          margin-bottom: 12px;
+          cursor: pointer;
+          font-size: 22px;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          margin-top: 16px;
+          margin-left: 4px;
+
+          .text {
+            margin-left: 16px;
+            font-size: 18px;
+            line-height: 32px;
+            vertical-align: middle;
+
+            .price {
+              font-weight: 700;
+              font-size: 18px;
+              line-height: 21px;
+            }
+          }
+
+          &:hover input ~ .checkmark {
+            border: 2px solid $yellow;
+            border-radius: 2px;
+          }
+
+          .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 28px;
+            width: 28px;
+            border: 2px solid $yellow;
+            border-radius: 2px;
+
+            &:after {
+              content: "";
+              position: absolute;
+              display: none;
+              left: 10px;
+              top: 6px;
+              width: 5px;
+              height: 10px;
+              border: solid white;
+              border-width: 0 3px 3px 0;
+              -webkit-transform: rotate(45deg);
+              -ms-transform: rotate(45deg);
+              transform: rotate(45deg);
+            }
+          }
+
+          .checkbox {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+
+            &:checked ~ .checkmark {
+              background-color: $yellow;
+              border-radius: 2px;
+
+              &:after {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .ready-button {
+    width: 274px;
+    position: fixed;
+    bottom: 16px;
+  }
+}

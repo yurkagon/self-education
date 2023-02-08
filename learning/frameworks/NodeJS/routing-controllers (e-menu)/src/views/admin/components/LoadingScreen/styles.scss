@@ -1,0 +1,11 @@
+.admin-view {
+  .loading-screen {
+    background-color: #ebedef;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 99;
+  }
+}

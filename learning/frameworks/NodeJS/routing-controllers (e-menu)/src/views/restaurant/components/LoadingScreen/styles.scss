@@ -1,0 +1,15 @@
+.restaurant-view {
+  .loading-screen {
+    background-color: #ffffff;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 99;
+
+    &.overlay {
+      z-index: 1000;
+    }
+  }
+}

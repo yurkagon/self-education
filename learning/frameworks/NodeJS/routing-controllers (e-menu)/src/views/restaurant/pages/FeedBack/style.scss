@@ -1,0 +1,90 @@
+.restaurant-view {
+  .feedback-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 20px 20px 15px;
+
+    .rateboard {
+      align-self: flex-start;
+      width: 100%;
+      .text {
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+      .rates {
+        display: flex;
+        justify-content: space-between;
+
+        .ripple-wrapper {
+          border-radius: 50%;
+          box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+          cursor: pointer;
+
+          .rate {
+            padding: 5px;
+
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+
+    .textarea {
+      margin-top: 20px;
+      width: 100%;
+      .field {
+        width: 100%;
+        background: #ffffff;
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 7px;
+        border-color: #ffffff;
+        padding: 13px;
+        height: 200px;
+
+        &::-webkit-input-placeholder {
+          color: #c4c4c4;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 16px;
+        }
+        &::-moz-placeholder {
+          color: #c4c4c4;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 16px;
+        }
+        &:-ms-input-placeholder {
+          color: #c4c4c4;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 16px;
+        }
+      }
+    }
+
+    .send {
+      position: fixed !important;
+      bottom: 16px;
+      z-index: 100;
+    }
+  }
+
+  .feedback-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 65px 15px 15px 15px;
+
+    .main-text {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 26px;
+      margin-bottom: auto;
+    }
+    .second-text {
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
+  }
+}

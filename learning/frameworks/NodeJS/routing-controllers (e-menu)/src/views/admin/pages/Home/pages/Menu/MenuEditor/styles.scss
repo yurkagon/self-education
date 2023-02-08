@@ -1,0 +1,79 @@
+.admin-view {
+  .menu-editor {
+    .category-column {
+      &:focus {
+        border: none;
+      }
+      .category-header {
+        border: 1px solid rgb(187, 187, 187);
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        padding: 12px 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &:hover .category-actions {
+          display: flex;
+        }
+
+        .category-actions {
+          display: none;
+
+          .category-edit {
+            margin-right: 16px;
+            color: rgb(187, 187, 187);
+          }
+
+          .category-remove {
+            color: rgb(175, 59, 59);
+          }
+        }
+      }
+
+      .dishes-column {
+        border: 1px solid rgb(187, 187, 187);
+        background-color: #fff;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+
+        &.id-dragging-over {
+          background: rgb(238, 249, 253);
+          opacity: 0.5;
+        }
+
+        .dish-item {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 10px;
+          background: white;
+          border-radius: 4px;
+          border: 1px solid rgb(187, 187, 187);
+          margin: 20px;
+
+          &.is-dragging {
+            opacity: 0.5;
+          }
+
+          &:hover .dish-actions {
+            display: flex;
+          }
+
+          .dish-actions {
+            display: none;
+
+            .dish-edit {
+              margin-right: 16px;
+              color: rgb(187, 187, 187);
+            }
+
+            .dish-remove {
+              color: rgb(175, 59, 59);
+            }
+          }
+        }
+      }
+    }
+  }
+}

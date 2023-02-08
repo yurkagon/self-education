@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+
+$redColor: #de646e;
+$greyColor: #858ea1;
+
+.restaurant-view {
+  overflow: hidden;
+  .page-container {
+    background-color: #052334;
+
+    .internal-error-page {
+      position: relative;
+      box-sizing: border-box;
+      margin: 0 auto;
+      width: max-content;
+      height: 100vh;
+      line-height: 0.8em;
+
+      .oven-img,
+      .text-error {
+        @include media-breakpoint-up(md) {
+          transform: scale(1.7);
+        }
+        @include media-breakpoint-up(lg) {
+          transform: scale(2);
+        }
+        @include media-breakpoint-up(xl) {
+          transform: scale(1);
+        }
+      }
+
+      .oven-img {
+        width: 100%;
+        height: 80%;
+        margin: 0 auto;
+      }
+
+      .text-error {
+        width: 340px;
+        height: 200px;
+        align-items: flex-end;
+        position: absolute;
+        top: 41%;
+        left: 12px;
+
+        .error {
+          font-family: "Righteous", cursive;
+          color: $redColor;
+          font-size: 77px;
+          margin-right: 20px;
+          padding-right: 20px;
+        }
+
+        .main-error-text,
+        .secondary-error-text {
+          font-size: 14px;
+          font-weight: 600;
+          max-width: 130px;
+          margin-right: 20px;
+          padding-right: 20px;
+        }
+
+        .main-error-text {
+          color: #ffda80;
+        }
+
+        .secondary-error-text {
+          color: white;
+        }
+      }
+
+      .down {
+        max-width: 275px;
+        line-height: 1.5em;
+        position: absolute;
+        bottom: 3%;
+
+        @include media-breakpoint-up(md) {
+          transform: scale(1.3);
+        }
+        @include media-breakpoint-up(lg) {
+          transform: scale(1.5);
+        }
+        @include media-breakpoint-up(xl) {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}

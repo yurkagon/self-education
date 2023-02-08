@@ -1,0 +1,36 @@
+$yellow: #ffda80;
+
+.restaurant-view {
+  .primary-button {
+    $yellow: #ffda80;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 56px;
+    background-color: $yellow;
+    border-radius: 999px;
+    transition: 0.3s ease-in;
+    width: 100%;
+    max-width: 275px;
+    cursor: pointer;
+
+    &.disabled {
+      background-color: rgba($yellow, 0.5);
+    }
+
+    .text {
+      font-weight: bold;
+    }
+
+    &:hover {
+      background-color: lighten($yellow, 10%);
+    }
+
+    .button {
+      background-color: #00000000;
+      border: 0px;
+      font-weight: 700;
+    }
+  }
+}

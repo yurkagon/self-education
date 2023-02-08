@@ -1,0 +1,39 @@
+.admin-view {
+  .c-sidebar {
+    .c-sidebar-nav-title {
+      margin: 0;
+      padding-top: 0;
+    }
+    .restaurant-name-link {
+      color: #fff;
+      display: flex;
+      padding: 12px 15px 0;
+      line-height: 2em;
+
+      .restaurant-name {
+        transition: 0.3s ease all;
+        margin-left: 10px;
+      }
+      .restaurant-logo {
+        height: 30px;
+        width: 30px;
+      }
+    }
+  }
+
+  .c-sidebar-minimized {
+    .restaurant-name-link {
+      margin: 11px auto -5px;
+      margin-left: 15px;
+      padding: 0px;
+
+      .restaurant-name {
+        opacity: 0;
+        visibility: hidden;
+      }
+      .restaurant-logo {
+        margin: 0 auto 20px;
+      }
+    }
+  }
+}

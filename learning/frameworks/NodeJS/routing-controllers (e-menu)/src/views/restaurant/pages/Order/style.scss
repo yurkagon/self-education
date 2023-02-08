@@ -1,0 +1,51 @@
+.restaurant-view {
+  .order {
+    margin: 0 7px 85px 7px;
+    .text {
+      margin-left: 15px;
+      text-transform: uppercase;
+      font-size: 18px;
+      line-height: 21px;
+      font-weight: bold;
+    }
+    .order-container {
+      padding: 0;
+      .table {
+        display: flex;
+        flex-direction: column;
+        align-items: space-between;
+        box-shadow: 0px 2px 6px rgba(133, 142, 161, 0.13);
+        border-radius: 8px;
+        padding: 15px;
+        .table-list {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          font-size: 18px;
+          line-height: 21px;
+          .names {
+            font-weight: 500;
+          }
+          .info {
+            display: flex;
+            justify-content: space-between;
+            width: 35%;
+          }
+        }
+
+        .description-container {
+          .description {
+            background-color: #fada80;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+            text-transform: uppercase;
+            padding: 2px 6px 2px 6px;
+            float: right;
+            margin: 10px 0 0 0;
+          }
+        }
+      }
+    }
+  }
+}

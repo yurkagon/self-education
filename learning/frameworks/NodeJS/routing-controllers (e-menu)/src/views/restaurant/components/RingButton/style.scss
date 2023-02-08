@@ -1,0 +1,19 @@
+.bell-icon {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+
+  .background {
+    height: 56px;
+    width: 56px;
+    border-radius: 50%;
+    background-color: black;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    img {
+      padding-bottom: 5px;
+    }
+  }
+}

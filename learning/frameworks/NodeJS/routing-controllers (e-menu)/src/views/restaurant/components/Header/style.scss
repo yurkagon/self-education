@@ -1,0 +1,85 @@
+.restaurant-view {
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 56px;
+    z-index: 500;
+    padding: 0;
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      position: relative;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      height: 56px;
+      background-color: #fff;
+      border-bottom: 1px solid #dfdfee;
+      z-index: 100;
+      padding: 0 15px;
+
+      .brand {
+        display: flex;
+        position: absolute;
+        left: 68px;
+
+        .brand__logo {
+          display: flex;
+        }
+        .brand__title {
+          display: flex;
+          flex-direction: column;
+          margin-left: 5px;
+          margin-top: 5px;
+
+          h1 {
+            margin: 0;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 21px;
+            color: #000;
+          }
+
+          p {
+            margin: 0;
+            font-weight: normal;
+            font-size: 10px;
+            line-height: 12px;
+            color: #858ea1;
+          }
+        }
+      }
+
+      .lang {
+        display: flex;
+        text-decoration: none;
+        align-items: center;
+
+        .shevr {
+          display: inline-flex;
+        }
+        .text {
+          display: inline-flex;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 19px;
+          color: #858ea1;
+          text-transform: uppercase;
+        }
+        .flag {
+          display: inline-flex;
+          margin-left: 5px;
+
+          svg {
+            border-radius: 3px;
+          }
+        }
+      }
+    }
+  }
+}

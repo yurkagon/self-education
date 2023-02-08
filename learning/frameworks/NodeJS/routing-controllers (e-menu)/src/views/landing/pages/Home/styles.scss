@@ -1,0 +1,13 @@
+.landing-view {
+  .header {
+    height: max-content;
+    padding-bottom: 6em;
+    overflow: hidden;
+    background: linear-gradient(
+      306deg,
+      rgba(255, 201, 1, 1) 0%,
+      rgba(255, 107, 107, 1) 100%
+    );
+    border-radius: 0 0 100% 100% / 0 0 200px 200px;
+  }
+}

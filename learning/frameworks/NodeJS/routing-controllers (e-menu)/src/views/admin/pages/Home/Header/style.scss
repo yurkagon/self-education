@@ -1,0 +1,19 @@
+.admin-view {
+  @media (max-width: 989px) {
+    .c-header {
+      .c-header-nav {
+        right: 0;
+        position: absolute;
+      }
+      .restaurant-name-link {
+        color: #333;
+        margin: 0;
+        padding-top: 0;
+        line-height: 4em;
+      }
+    }
+    .side-bar-toggler-header {
+      height: 56px;
+    }
+  }
+}
