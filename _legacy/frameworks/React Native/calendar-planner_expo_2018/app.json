@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "Сalendar planner",
+    "description": "A very interesting project.",
+    "slug": "calendar-planner",
+    "privacy": "public",
+    "sdkVersion": "24.0.0",
+    "platforms": ["android"],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "android": {
+      "package": "com.yurkagon.calendarplaner",
+      "config": {
+        "googleSignIn": {
+          "apiKey": "AIzaSyAxoc5pKY-qAGptlkC_HsTEaxKkfvTvwo0",
+          "certificateHash": "0E8623B20D1471BA958F2490647E7DC1CAAB2EB2"
+        }
+      }
+    }
+  }
+}
