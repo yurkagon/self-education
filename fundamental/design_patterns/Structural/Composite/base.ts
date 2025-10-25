@@ -1,12 +1,12 @@
-interface ProductI {
+interface Product {
   price?: number;
   getPrice(): number;
 }
 
-class Box implements ProductI {
-  private products: ProductI[];
+class Box implements Product {
+  private products: Product[];
 
-  constructor(products: ProductI[]) {
+  constructor(products: Product[]) {
     this.products = products;
   }
 
@@ -20,7 +20,7 @@ class Box implements ProductI {
   }
 }
 
-class Product implements ProductI {
+class Product implements Product {
   price: number;
   constructor(price: number) {
     this.price = price;
