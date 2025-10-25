@@ -1,11 +1,21 @@
-export interface IColor {
+export interface Color {
   draw(): void;
+}
+class Red implements Color {
+  public draw(): void {
+    console.log("red");
+  }
+}
+class Blue implements Color {
+  public draw(): void {
+    console.log("blue");
+  }
 }
 
 abstract class Shape {
-  protected color: IColor;
+  protected color: Color;
 
-  constructor(color: IColor) {
+  constructor(color: Color) {
     this.color = color;
   }
 
@@ -22,18 +32,6 @@ class Square extends Shape {
   public callIt(): void {
     console.log("This is Square");
     this.color.draw();
-  }
-}
-
-
-export class Red implements IColor {
-  public draw() : void {
-    console.log("red");
-  }
-}
-export class Blue implements IColor {
-  public draw() : void {
-    console.log("blue");
   }
 }
 
