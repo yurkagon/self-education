@@ -18,20 +18,16 @@ class Cat extends Animal {
   }
 }
 
-interface IAnimalConfig {
-  type: string;
-  name: string;
-};
-
-
-
 class AnimalFactory {
   public static readonly animalTypes = {
     cat: Cat,
     dog: Dog
   };
 
-  public static createAnimal(config: IAnimalConfig): Animal {
+  public static createAnimal(config: {
+    type: string;
+    name: string;
+  }): Animal {
     const { type, name } = config;
 
     const AnimalClass = AnimalFactory.animalTypes[type];
