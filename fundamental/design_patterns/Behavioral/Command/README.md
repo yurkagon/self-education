@@ -1,6 +1,6 @@
 # Патерн Command (Команда)
 
-Перелаємо onClick як команду Button
+Передаємо onClick як команду Button
 
 ## Опис
 

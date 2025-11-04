@@ -24,7 +24,7 @@ class ArrayIterator {
   }
 
   public each(callback) {
-    for (var item = this.first(); this.hasNext(); item = this.next()) {
+    for (let item = this.first(); this.hasNext(); item = this.next()) {
       callback(item);
     }
   }
