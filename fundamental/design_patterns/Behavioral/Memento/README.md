@@ -1,8 +1,10 @@
 # Патерн Memento (Згадка)
 
+Текстовий редактор з можливістю undo (відкату змін)
+
 ## Опис
 
-Memento - це патерн поведінки, який дозволяє зберігати та відновлювати попередній стан об'єкта без розкриття деталей його реалізації. Патерн забезпечує можливість відкату змін.
+Memento - це патерн поведінки, який дозволяє зберігати та відновлювати попередній стан об'єкта без розкриття деталей його реалізації. Патерн забезпечує можливість відкату змін. Класичний приклад - текстовий редактор з функцією undo.
 
 ## Основні принципи
 
@@ -40,92 +42,114 @@ Memento - це патерн поведінки, який дозволяє збе
 
 ### Компоненти
 
-1. **Originator** - об'єкт, стан якого зберігається
-2. **Memento** - зберігає стан об'єкта
-3. **Caretaker** - управляє згадками
-4. **Client** - клієнт
+1. **Originator (TextEditor)** - об'єкт, стан якого зберігається
+2. **Memento** - зберігає стан об'єкта (текст)
+3. **Caretaker (History)** - управляє згадками та історією
+4. **Client** - клієнт (використовує редактор)
 
 ## Реалізація (base.ts)
 
 ### Аналіз коду
 
-#### 1. Memento
+#### 1. Memento (Згадка)
 ```typescript
 class Memento {
-  constructor(private state: string) {}
+  private text: string;
 
-  getState(): string {
-    return this.state;
+  constructor(text: string) {
+    this.text = text;
+  }
+
+  getText(): string {
+    return this.text;
   }
 }
 ```
 
 **Особливості:**
-- **Збереження**: Зберігає стан об'єкта
+- **Збереження**: Зберігає текст (стан об'єкта)
 - **Інкапсуляція**: Не розкриває деталі реалізації
-- **Незмінність**: Стан не змінюється після створення
+- **Незмінність**: Текст не змінюється після створення
+- **Простота**: Мінімальний інтерфейс для отримання стану
 
-#### 2. Originator
+#### 2. History (Caretaker - Опікун)
 ```typescript
-class Originator {
-  private state: string = '';
+class History {
+  private history: Memento[] = [];
 
-  setState(state: string): void {
-    this.state = state;
+  save(memento: Memento): void {
+    this.history.push(memento);
+  }
+
+  undo(): Memento | null {
+    return this.history.pop() || null;
+  }
+}
+```
+
+**Особливості:**
+- **Зберігання**: Зберігає згадки в масиві (стек)
+- **Управління**: Управляє історією станів
+- **Undo**: Метод `undo()` повертає останній збережений стан
+- **Стек**: Використовує стек для LIFO (Last In, First Out)
+
+#### 3. TextEditor (Originator - Творець)
+```typescript
+class TextEditor {
+  private text: string = '';
+
+  setText(text: string): void {
+    this.text = text;
+  }
+
+  getText(): string {
+    return this.text;
   }
 
   save(): Memento {
-    return new Memento(this.state);
+    return new Memento(this.text);
   }
 
   restore(memento: Memento): void {
-    this.state = memento.getState();
+    this.text = memento.getText();
   }
 }
 ```
 
 **Особливості:**
-- **Стан**: Має внутрішній стан
+- **Стан**: Має внутрішній стан (текст)
 - **save()**: Створює згадку з поточного стану
 - **restore()**: Відновлює стан зі згадки
-- **Контроль**: Контролює створення та відновлення
-
-#### 3. Caretaker
-```typescript
-class Caretaker {
-  private mementos: Memento[] = [];
-
-  addMemento(memento: Memento): void {
-    this.mementos.push(memento);
-  }
-
-  getMemento(index: number): Memento {
-    return this.mementos[index];
-  }
-}
-```
-
-**Особливості:**
-- **Зберігання**: Зберігає згадки в масиві
-- **Управління**: Управляє історією станів
-- **Доступ**: Надає доступ до згадок
+- **Контроль**: Контролює створення та відновлення стану
 
 #### 4. Використання
 ```typescript
-const originator = new Originator();
-const caretaker = new Caretaker();
+const editor = new TextEditor();
+const history = new History();
 
-originator.setState('State 1');
-caretaker.addMemento(originator.save());
+// Пишемо текст
+editor.setText('Привіт');
+history.save(editor.save());
 
-originator.setState('State 2');
-originator.restore(caretaker.getMemento(0));
+editor.setText('Привіт, світ!');
+history.save(editor.save());
+
+editor.setText('Привіт, світ! Я тут.');
+
+// Відкат (undo)
+const previous = history.undo();
+if (previous) {
+  editor.restore(previous);
+}
+
+console.log(editor.getText()); // "Привіт, світ!"
 ```
 
 **Особливості:**
-- **Збереження**: Зберігає стани в згадках
-- **Відновлення**: Відновлює попередні стани
-- **Історія**: Підтримує історію змін
+- **Збереження**: Зберігає стани в історії після кожної зміни
+- **Відновлення**: Відновлює попередній стан через `undo()`
+- **Історія**: Підтримує історію змін у вигляді стеку
+- **Undo**: Простий механізм відкату останньої зміни
 
 ## Типи Memento патернів
 
@@ -146,22 +170,41 @@ originator.restore(caretaker.getMemento(0));
 
 ## Приклади використання
 
-### 1. Текстовий редактор
-```typescript
-class TextEditor {
-  private content: string = '';
+### 1. Текстовий редактор (base.ts)
+Це основний приклад у файлі `base.ts` - простий текстовий редактор з функцією undo.
 
-  save(): Memento {
-    return new Memento(this.content);
+### 2. Розширений редактор з redo
+```typescript
+class AdvancedHistory {
+  private history: Memento[] = [];
+  private currentIndex: number = -1;
+
+  save(memento: Memento): void {
+    // Видаляємо все після поточного індексу
+    this.history = this.history.slice(0, this.currentIndex + 1);
+    this.history.push(memento);
+    this.currentIndex++;
   }
 
-  restore(memento: Memento): void {
-    this.content = memento.getState();
+  undo(): Memento | null {
+    if (this.currentIndex > 0) {
+      this.currentIndex--;
+      return this.history[this.currentIndex];
+    }
+    return null;
+  }
+
+  redo(): Memento | null {
+    if (this.currentIndex < this.history.length - 1) {
+      this.currentIndex++;
+      return this.history[this.currentIndex];
+    }
+    return null;
   }
 }
 ```
 
-### 2. Гра
+### 3. Гра (збереження прогресу)
 ```typescript
 class Game {
   private level: number = 1;
@@ -172,14 +215,14 @@ class Game {
   }
 
   restore(memento: Memento): void {
-    const state = JSON.parse(memento.getState());
+    const state = JSON.parse(memento.getText());
     this.level = state.level;
     this.score = state.score;
   }
 }
 ```
 
-### 3. Форма
+### 4. Форма (відкат змін)
 ```typescript
 class Form {
   private fields: Record<string, string> = {};
@@ -189,20 +232,39 @@ class Form {
   }
 
   restore(memento: Memento): void {
-    this.fields = JSON.parse(memento.getState());
+    this.fields = JSON.parse(memento.getText());
   }
 }
 ```
 
 ## Розширення функціональності
 
+### Додавання обмеження історії
+```typescript
+class History {
+  private history: Memento[] = [];
+  private maxHistory: number = 10;
+
+  save(memento: Memento): void {
+    this.history.push(memento);
+    if (this.history.length > this.maxHistory) {
+      this.history.shift(); // Видаляємо найстаріший
+    }
+  }
+}
+```
+
 ### Додавання timestamp
 ```typescript
 class Memento {
   constructor(
-    private state: string,
+    private text: string,
     private timestamp: Date = new Date()
   ) {}
+
+  getText(): string {
+    return this.text;
+  }
 
   getTimestamp(): Date {
     return this.timestamp;
@@ -210,16 +272,32 @@ class Memento {
 }
 ```
 
-### Додавання обмеження історії
+### Додавання redo (повернення вперед)
 ```typescript
-class Caretaker {
-  private maxHistory: number = 10;
+class History {
+  private history: Memento[] = [];
+  private currentIndex: number = -1;
 
-  addMemento(memento: Memento): void {
-    this.mementos.push(memento);
-    if (this.mementos.length > this.maxHistory) {
-      this.mementos.shift();
+  save(memento: Memento): void {
+    this.history = this.history.slice(0, this.currentIndex + 1);
+    this.history.push(memento);
+    this.currentIndex++;
+  }
+
+  undo(): Memento | null {
+    if (this.currentIndex > 0) {
+      this.currentIndex--;
+      return this.history[this.currentIndex];
     }
+    return null;
+  }
+
+  redo(): Memento | null {
+    if (this.currentIndex < this.history.length - 1) {
+      this.currentIndex++;
+      return this.history[this.currentIndex];
+    }
+    return null;
   }
 }
 ```
@@ -228,9 +306,13 @@ class Caretaker {
 ```typescript
 class Memento {
   constructor(
-    private state: string,
+    private text: string,
     private metadata: Record<string, any> = {}
   ) {}
+
+  getText(): string {
+    return this.text;
+  }
 
   getMetadata(): Record<string, any> {
     return this.metadata;

@@ -1,54 +1,73 @@
-// Memento Pattern - простий приклад
+// Memento Pattern - максимально простий приклад
 
+// Memento - зберігає стан
 class Memento {
-  constructor(private state: string) {}
+  private text: string
 
-  getState(): string {
-    return this.state;
+  constructor(text: string) {
+    this.text = text;
+  }
+
+  getText(): string {
+    return this.text;
   }
 }
 
-class Originator {
-  private state: string = '';
+// Caretaker - зберігає історію
+class History {
+  private history: Memento[] = [];
 
-  setState(state: string): void {
-    this.state = state;
+  save(memento: Memento): void {
+    this.history.push(memento);
   }
 
-  getState(): string {
-    return this.state;
+  undo(): Memento | null {
+    return this.history.pop() || null;
+  }
+}
+
+
+// Originator - об'єкт, стан якого зберігаємо
+class TextEditor {
+  private text: string = '';
+
+  setText(text: string): void {
+    this.text = text;
   }
 
+  getText(): string {
+    return this.text;
+  }
+
+  // Зберігаємо поточний стан
   save(): Memento {
-    return new Memento(this.state);
+    return new Memento(this.text);
   }
 
+  // Відновлюємо збережений стан
   restore(memento: Memento): void {
-    this.state = memento.getState();
-  }
-}
-
-class Caretaker {
-  private mementos: Memento[] = [];
-
-  addMemento(memento: Memento): void {
-    this.mementos.push(memento);
-  }
-
-  getMemento(index: number): Memento {
-    return this.mementos[index];
+    this.text = memento.getText();
   }
 }
 
 // Використання
-const originator = new Originator();
-const caretaker = new Caretaker();
+const editor = new TextEditor();
+const history = new History();
 
-originator.setState('State 1');
-caretaker.addMemento(originator.save());
+// Пишемо текст
+editor.setText('Привіт');
+history.save(editor.save());
 
-originator.setState('State 2');
-caretaker.addMemento(originator.save());
+editor.setText('Привіт, світ!');
+history.save(editor.save());
 
-originator.restore(caretaker.getMemento(0));
-console.log(originator.getState()); // State 1
+editor.setText('Привіт, світ! Я тут.');
+
+// Відкат (undo)
+const previous = history.undo();
+if (previous) {
+  editor.restore(previous);
+}
+
+console.log(editor.getText()); // "Привіт, світ!"
+
