@@ -1,0 +1,25 @@
+info:
+  name: Remove movie
+  type: http
+  seq: 7
+
+http:
+  method: DELETE
+  url: http://localhost:3000/actor/:id/movie/:movieId
+  headers:
+    - name: Authorization
+      value: Bearer token
+  params:
+    - name: id
+      value: 5150431b-c382-41c7-83e7-c9a1d1218912
+      type: path
+    - name: movieId
+      value: 55df0dcf-5367-48dd-ab8e-af76882caa8d
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

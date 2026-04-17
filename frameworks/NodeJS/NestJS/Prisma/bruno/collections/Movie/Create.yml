@@ -1,0 +1,30 @@
+info:
+  name: Create
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: http://localhost:3000/movie
+  headers:
+    - name: Authorization
+      value: Bearer token
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "title": "Inception",
+        "description": "A thief who steals corporate secrets through dream-sharing technology.",
+        "isPublished": true,
+        "url": "https://example.com/posters/inception1.jpg",
+        "releaseYear": 1996
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

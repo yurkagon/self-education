@@ -1,0 +1,30 @@
+info:
+  name: Add movie
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: http://localhost:3000/actor/:id/movie
+  headers:
+    - name: Authorization
+      value: Bearer token
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: id
+      value: 5150431b-c382-41c7-83e7-c9a1d1218912
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "movieId": "55df0dcf-5367-48dd-ab8e-af76882caa8d"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

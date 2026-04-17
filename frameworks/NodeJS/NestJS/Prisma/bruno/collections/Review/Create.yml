@@ -1,0 +1,28 @@
+info:
+  name: Create
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: http://localhost:3000/review
+  headers:
+    - name: Authorization
+      value: Bearer token
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "rating": 8.5,
+        "text": "Thought-provoking and visually stunning.",
+        "movieId": "ba3a77aa-9607-4967-9f22-b6991d703c0b"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

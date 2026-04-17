@@ -1,0 +1,19 @@
+model Review {
+  id String @id @default(uuid())
+
+  rating Float
+  text   String
+
+  // One to Many relationship with Movie
+  movie   Movie  @relation("movie_reviews", fields: [movieId], references: [id], onDelete: Cascade)
+  movieId String @map("movie_id")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  // @@unique([movieId, userId]) - unique constraint on movieId and userId
+  @@index([movieId])                  // Foreign key - швидкий пошук відгуків фільму
+  @@index([rating])                   // Сортування/фільтрація за рейтингом
+  @@index([createdAt])                // Сортування за датою створення
+  @@map("reviews")
+}

@@ -1,0 +1,13 @@
+model Actor {
+  id String @id @default(uuid())
+
+  name String
+
+  // Many to Many relationship with Movie
+  movies Movie[] @relation("movie_actors")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("actors")
+}

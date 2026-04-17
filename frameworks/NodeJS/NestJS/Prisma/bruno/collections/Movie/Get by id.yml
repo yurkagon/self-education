@@ -1,0 +1,22 @@
+info:
+  name: Get by id
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: http://localhost:3000/movie/:id
+  headers:
+    - name: Authorization
+      value: Bearer token
+  params:
+    - name: id
+      value: 1426be2f-185a-47bd-9ac0-dd45785dd564
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

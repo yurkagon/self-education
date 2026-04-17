@@ -1,0 +1,30 @@
+info:
+  name: Add actor
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: http://localhost:3000/movie/:id/actor
+  auth: inherit
+  params:
+    - name: id
+      value: 00000000-0000-0000-0000-000000000000
+      type: path
+  headers:
+    - name: Authorization
+      value: Bearer token
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "actorId": "00000000-0000-0000-0000-000000000000"
+      }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

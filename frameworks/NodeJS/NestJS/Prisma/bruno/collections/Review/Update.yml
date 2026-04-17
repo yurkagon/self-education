@@ -1,0 +1,32 @@
+info:
+  name: Update
+  type: http
+  seq: 4
+
+http:
+  method: PATCH
+  url: http://localhost:3000/review/:id
+  headers:
+    - name: Authorization
+      value: Bearer token
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: id
+      value: cda4f165-92b7-4210-9b5e-1367db3d66f0
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "rating": 9,
+        "text": "Even better on rewatch.",
+        "movieId": "00000000-0000-0000-0000-000000000000"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,16 @@
+opencollection: 1.0.0
+info:
+  name: "Nest Course"
+  type: workspace
+
+collections:
+  - name: "Movie"
+    path: "collections/Movie"
+  - name: "Actor"
+    path: "collections/Actor"
+  - name: "Review"
+    path: "collections/Review"
+
+specs:
+
+docs: ''

@@ -1,0 +1,22 @@
+info:
+  name: Delete
+  type: http
+  seq: 5
+
+http:
+  method: DELETE
+  url: http://localhost:3000/review/:id
+  headers:
+    - name: Authorization
+      value: Bearer token
+  params:
+    - name: id
+      value: cda4f165-92b7-4210-9b5e-1367db3d66f0
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

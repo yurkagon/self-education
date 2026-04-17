@@ -1,0 +1,30 @@
+info:
+  name: Update
+  type: http
+  seq: 4
+
+http:
+  method: PATCH
+  url: http://localhost:3000/actor/:id
+  headers:
+    - name: Authorization
+      value: Bearer token
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: id
+      value: eb3555f6-8e36-49cb-945a-9d1eaa9b7637
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Leonardo Wilhelm DiCaprio"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

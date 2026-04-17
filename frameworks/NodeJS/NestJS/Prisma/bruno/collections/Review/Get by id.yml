@@ -1,0 +1,22 @@
+info:
+  name: Get by id
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: http://localhost:3000/review/:id
+  headers:
+    - name: Authorization
+      value: Bearer token
+  params:
+    - name: id
+      value: 248c30e4-ed03-4892-bf8f-278cd20b4aeb
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

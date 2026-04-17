@@ -1,0 +1,51 @@
+model Movie {
+  id String @id @default(uuid())
+
+  title       String
+  description String?
+  releaseYear Int     @map("release_year")
+
+  rating      Float?  @default(0.0)
+  isPublished Boolean @default(false) @map("is_published")
+  genre       Genre?  @default(ACTION)
+
+  // One to Many relationship with Movie
+  reviews  Review[]     @relation("movie_reviews")
+  // Many to Many relationship with Actor
+  actors   Actor[]      @relation("movie_actors")
+  // One to One relationship with MoviePoster
+  poster   MoviePoster? @relation("movie_poster", fields: [posterId], references: [id])
+  posterId String?      @unique @map("poster_id")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([genre]) // Фільтрація за жанром
+  @@index([rating]) // Сортування/фільтрація за рейтингом
+  @@index([releaseYear]) // Фільтрація за роком випуску (вже був)
+  @@index([createdAt]) // Сортування за датою створення
+  @@map("movies")
+}
+
+model MoviePoster {
+  id String @id @default(uuid())
+
+  url String
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  movie Movie? @relation("movie_poster")
+
+  @@map("movie_posters")
+}
+
+enum Genre {
+  ACTION
+  COMEDY
+  DRAMA
+  HORROR
+  ROMANCE
+  SCIENCE_FICTION
+  THRILLER
+}
