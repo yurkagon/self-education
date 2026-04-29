@@ -1,0 +1,21 @@
+info:
+  name: Refresh
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{baseUrl}}/auth/refresh"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  Returns new access + refresh cookies when the `refreshToken` cookie is valid.
+
+  1. Run **Login** or **Register** first so the API sets `Set-Cookie` (httpOnly).
+  2. Bruno should keep cookies for `localhost:3000`; if not, use the Cookies UI or copy the `refreshToken` value into a request cookie.

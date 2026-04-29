@@ -1,0 +1,18 @@
+info:
+  name: Logout
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{baseUrl}}/auth/logout"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  Clears `accessToken` and `refreshToken` httpOnly cookies (204). Send after Login/Register if you need to drop the session in Bruno’s cookie jar.

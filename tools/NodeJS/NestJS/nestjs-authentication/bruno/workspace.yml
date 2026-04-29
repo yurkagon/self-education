@@ -1,0 +1,16 @@
+opencollection: 1.0.0
+info:
+  name: "Nest Course"
+  type: workspace
+
+collections:
+  - name: "Auth"
+    path: "collections/Auth"
+  - name: "User"
+    path: "collections/User"
+
+specs:
+
+docs: ''
+
+activeEnvironmentUid: 7gidkm000000000000000
