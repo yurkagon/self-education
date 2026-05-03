@@ -1,0 +1,37 @@
+meta {
+  name: Register
+  type: graphql
+  seq: 1
+}
+
+post {
+  url: {{graphqlUrl}}
+  body: graphql
+  auth: none
+}
+
+body:graphql {
+  mutation AuthRegister($data: RegisterInput!) {
+    authRegister(data: $data) {
+      user {
+        id
+        name
+        email
+      }
+    }
+  }
+}
+
+body:graphql:vars {
+  {
+    "data": {
+      "name": "Bruno Demo",
+      "email": "bruno.demo@example.com",
+      "password": "password12345"
+    }
+  }
+}
+
+docs {
+  GraphQL: `authRegister`. Sets httpOnly cookies — enable Cookie Jar for this host.
+}

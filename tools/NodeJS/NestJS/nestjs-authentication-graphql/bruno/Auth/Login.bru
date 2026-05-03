@@ -1,0 +1,36 @@
+meta {
+  name: Login
+  type: graphql
+  seq: 2
+}
+
+post {
+  url: {{graphqlUrl}}
+  body: graphql
+  auth: none
+}
+
+body:graphql {
+  mutation AuthLogin($data: LoginInput!) {
+    authLogin(data: $data) {
+      user {
+        id
+        name
+        email
+      }
+    }
+  }
+}
+
+body:graphql:vars {
+  {
+    "data": {
+      "email": "bruno.demo@example.com",
+      "password": "password12345"
+    }
+  }
+}
+
+docs {
+  GraphQL: `authLogin`. Same cookies as Register.
+}

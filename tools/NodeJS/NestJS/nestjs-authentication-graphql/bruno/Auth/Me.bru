@@ -1,0 +1,27 @@
+meta {
+  name: Me
+  type: graphql
+  seq: 5
+}
+
+post {
+  url: {{graphqlUrl}}
+  body: graphql
+  auth: none
+}
+
+body:graphql {
+  query AuthMe {
+    authMe {
+     user {
+        id
+        name
+        email
+      }
+    }
+  }
+}
+
+docs {
+  GraphQL: `authMe`. Потрібен JWT у cookie `accessToken` — спочатку виконай Login або Register, Cookie Jar має зберігати cookies для цього хосту.
+}

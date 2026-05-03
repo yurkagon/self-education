@@ -1,0 +1,21 @@
+meta {
+  name: Refresh
+  type: graphql
+  seq: 3
+}
+
+post {
+  url: {{graphqlUrl}}
+  body: graphql
+  auth: none
+}
+
+body:graphql {
+  mutation AuthRefresh {
+    authRefresh
+  }
+}
+
+docs {
+  GraphQL: `authRefresh`. Потребує cookie `refreshToken` після Login або Register — у Bruno увімкни Cookie Jar для цього хосту.
+}

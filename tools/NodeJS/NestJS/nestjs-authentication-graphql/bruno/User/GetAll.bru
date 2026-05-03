@@ -1,0 +1,25 @@
+meta {
+  name: GetAll
+  type: graphql
+  seq: 1
+}
+
+post {
+  url: {{graphqlUrl}}
+  body: graphql
+  auth: none
+}
+
+body:graphql {
+  query Users {
+    getUsers {
+      id
+      name
+      email
+    }
+  }
+}
+
+docs {
+  GraphQL: `getUsers` (аналог списку користувачів з REST).
+}
