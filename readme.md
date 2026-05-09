@@ -5,7 +5,7 @@ nothing to be interesting for you :)
 ```
 [user]
  name = cptPrice
- email = elon_musk@mail.ru
+ email = elon_musk@gmail.com
 
 [alias]
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
