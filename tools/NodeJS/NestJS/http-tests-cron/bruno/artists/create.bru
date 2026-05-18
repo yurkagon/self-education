@@ -1,0 +1,16 @@
+meta {
+  name: create artist
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{host}}/v1/artists
+}
+
+body:json {
+  {
+    "name": "Bruno Demo",
+    "genre": "Indie"
+  }
+}
